@@ -162,9 +162,15 @@ Check the etcd configuration
   ubuntu@docker-node2:~/etcd-v3.0.12-linux-amd64$ ./etcdctl ls /coreos.com/network/subnets/
   /coreos.com/network/subnets/10.15.64.0-20
   /coreos.com/network/subnets/10.13.48.0-20
-  ubuntu@docker-node2:~/etcd-v3.0.12-linux-amd64$ ./etcdctl get /coreos.com/network/subnets/10.13.48.0-20
-  {"PublicIP":"192.168.205.11","BackendType":"vxlan","BackendData":{"VtepMAC":"9e:e7:65:f3:9d:31"}}
-
+  ubuntu@docker-node2:~/etcd-v3.0.12-linux-amd64$ ./etcdctl get /coreos.com/network/subnets/10.13.48.0-20 | jq .
+  {
+    "PublicIP": "192.168.205.11",
+    "BackendType": "vxlan",
+    "BackendData": {
+      "VtepMAC": "9e:e7:65:f3:9d:31"
+    }
+  }
+  
 This also has a new interface created by flannel ``flannel.100``
 
 Restart docker daemon with flannel network
