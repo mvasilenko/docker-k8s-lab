@@ -60,6 +60,7 @@ flannel will read the configuration from etcd ``/coreos.com/network/config`` by 
 configuration to etcd cluster, the configuration is JSON format like that:
 
 .. code-block:: json
+
   ubuntu@docker-node1:~$ cat > flannel-network-config.json
   {
       "Network": "10.0.0.0/8",
@@ -73,6 +74,7 @@ configuration to etcd cluster, the configuration is JSON format like that:
       }
   }
   EOF
+
 
 For the configuration keys meaning, please go to https://github.com/coreos/flannel for more information. Set the configuration
 on host1:
