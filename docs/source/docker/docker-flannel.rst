@@ -61,7 +61,7 @@ configuration to etcd cluster, the configuration is JSON format like that:
 
 .. code-block:: json
 
-  ubuntu@docker-node1:~$ cat > flannel-network-config.json
+  ubuntu@docker-node1:~$ cat > flannel-network-config.json <<EOF
   {
       "Network": "10.0.0.0/8",
       "SubnetLen": 20,
